@@ -1,12 +1,48 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState, useRef, useCallback } from "react";
+import Hero from "@/components/landing/Hero";
+import TrendSection from "@/components/landing/TrendSection";
+import CasesSection from "@/components/landing/CasesSection";
+import PopupForm from "@/components/landing/PopupForm";
+import ReviewsSlider from "@/components/landing/ReviewsSlider";
+import ForecastSection from "@/components/landing/ForecastSection";
+import FinalCTA from "@/components/landing/FinalCTA";
+import StickyCTA from "@/components/landing/StickyCTA";
 
 const Index = () => {
+  const [popupOpen, setPopupOpen] = useState(false);
+  const [showSticky, setShowSticky] = useState(false);
+  const popupShownRef = useRef(false);
+
+  const openPopup = useCallback(() => {
+    window.dispatchEvent(new CustomEvent("analytics", { detail: { event: "cta_click" } }));
+    setPopupOpen(true);
+  }, []);
+
+  const handleCasesInView = useCallback(() => {
+    setShowSticky(true);
+    if (!popupShownRef.current) {
+      popupShownRef.current = true;
+      setTimeout(() => {
+        window.dispatchEvent(new CustomEvent("analytics", { detail: { event: "popup_open" } }));
+        setPopupOpen(true);
+      }, 1500);
+    }
+  }, []);
+
+  const scrollToCases = useCallback(() => {
+    document.getElementById("cases")?.scrollIntoView({ behavior: "smooth" });
+  }, []);
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen pb-16">
+      <Hero onCTAClick={openPopup} onCasesClick={scrollToCases} />
+      <TrendSection />
+      <CasesSection onInView={handleCasesInView} />
+      <ReviewsSlider />
+      <ForecastSection />
+      <FinalCTA />
+      <PopupForm isOpen={popupOpen} onClose={() => setPopupOpen(false)} />
+      <StickyCTA visible={showSticky && !popupOpen} onClick={openPopup} />
     </div>
   );
 };
