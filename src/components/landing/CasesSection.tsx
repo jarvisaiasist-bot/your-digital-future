@@ -7,14 +7,14 @@ interface CasesSectionProps {
 }
 
 const cases = [
-  { name: "Василий", from: "Охранник магазина", to: "Аналитик в blockchain", duration: "6 мес", avatar: "В", color: "bg-primary" },
-  { name: "Пётр", from: "Водитель такси", to: "AI-инженер", duration: "8 мес", avatar: "П", color: "bg-accent" },
-  { name: "Марина", from: "Бухгалтер", to: "UX-дизайнер", duration: "5 мес", avatar: "М", color: "bg-success" },
-  { name: "Дмитрий", from: "Менеджер по продажам", to: "Product-менеджер", duration: "4 мес", avatar: "Д", color: "bg-primary" },
-  { name: "Елена", from: "Учитель", to: "SMM-специалист", duration: "3 мес", avatar: "Е", color: "bg-accent" },
-  { name: "Алексей", from: "Строитель", to: "Frontend-разработчик", duration: "9 мес", avatar: "А", color: "bg-success" },
-  { name: "Ольга", from: "Кассир", to: "Таргетолог", duration: "4 мес", avatar: "О", color: "bg-primary" },
-  { name: "Игорь", from: "Электрик", to: "Data Scientist", duration: "10 мес", avatar: "И", color: "bg-accent" },
+  { name: "Emre", from: "Market güvenliği", to: "Blockchain analisti", duration: "6 ay", avatar: "E", color: "bg-primary" },
+  { name: "Ahmet", from: "Taksi şoförü", to: "AI mühendisi", duration: "8 ay", avatar: "A", color: "bg-accent" },
+  { name: "Ayşe", from: "Muhasebeci", to: "UX tasarımcı", duration: "5 ay", avatar: "AY", color: "bg-success" },
+  { name: "Mehmet", from: "Satış müdürü", to: "Ürün yöneticisi", duration: "4 ay", avatar: "M", color: "bg-primary" },
+  { name: "Elif", from: "Öğretmen", to: "SMM uzmanı", duration: "3 ay", avatar: "EL", color: "bg-accent" },
+  { name: "Can", from: "İnşaat işçisi", to: "Frontend geliştirici", duration: "9 ay", avatar: "C", color: "bg-success" },
+  { name: "Zeynep", from: "Kasiyer", to: "Hedefleme uzmanı", duration: "4 ay", avatar: "Z", color: "bg-primary" },
+  { name: "Burak", from: "Elektrikçi", to: "Data Scientist", duration: "10 ay", avatar: "B", color: "bg-accent" },
 ];
 
 const CasesSection = ({ onInView }: CasesSectionProps) => {
@@ -31,33 +31,33 @@ const CasesSection = ({ onInView }: CasesSectionProps) => {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
         >
-          <h2 className="section-title mb-1">Реальные кейсы</h2>
-          <p className="text-muted-foreground text-sm mb-6">
-            Люди, которые уже сменили профессию с нашей помощью
+          <h2 className="section-title mb-1">Gerçek <span className="text-gradient">başarı hikayeleri</span></h2>
+          <p className="text-muted-foreground text-sm mb-8 lg:text-base">
+            Yardımımızla meslek değiştiren insanlar
           </p>
         </motion.div>
 
-        <div className="space-y-3">
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {cases.map((c, i) => (
             <motion.div
               key={i}
-              className="card-elevated flex items-center gap-3"
+              className="card-elevated flex items-center gap-3 lg:flex-col lg:items-start lg:text-left lg:gap-4"
               initial={{ opacity: 0, y: 15 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 0.1 + i * 0.07 }}
+              transition={{ delay: 0.1 + i * 0.06 }}
             >
-              <div className={`w-11 h-11 rounded-full ${c.color} flex items-center justify-center flex-shrink-0`}>
-                <span className="text-sm font-bold" style={{ color: "hsl(var(--primary-foreground))" }}>{c.avatar}</span>
+              <div className={`w-11 h-11 lg:w-14 lg:h-14 rounded-full ${c.color} flex items-center justify-center flex-shrink-0`}>
+                <span className="text-sm lg:text-base font-bold" style={{ color: "hsl(var(--primary-foreground))" }}>{c.avatar}</span>
               </div>
               <div className="flex-1 min-w-0">
-                <p className="font-semibold text-sm text-foreground">{c.name}</p>
-                <div className="flex items-center gap-1 text-xs text-muted-foreground">
+                <p className="font-semibold text-sm text-foreground lg:text-base">{c.name}</p>
+                <div className="flex items-center gap-1 text-xs text-muted-foreground lg:text-sm">
                   <span className="truncate">{c.from}</span>
                   <ArrowRight className="w-3 h-3 flex-shrink-0 text-accent" />
                   <span className="truncate font-medium text-foreground">{c.to}</span>
                 </div>
               </div>
-              <span className="text-xs font-semibold text-primary whitespace-nowrap">{c.duration}</span>
+              <span className="text-xs font-bold text-primary whitespace-nowrap lg:text-sm">{c.duration}</span>
             </motion.div>
           ))}
         </div>

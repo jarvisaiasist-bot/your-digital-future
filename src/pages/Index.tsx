@@ -1,4 +1,5 @@
 import { useState, useRef, useCallback } from "react";
+import Header from "@/components/landing/Header";
 import Hero from "@/components/landing/Hero";
 import TrendSection from "@/components/landing/TrendSection";
 import CasesSection from "@/components/landing/CasesSection";
@@ -34,7 +35,8 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen pb-16">
+    <div className="min-h-screen pb-16 lg:pb-0">
+      <Header onCTAClick={openPopup} />
       <Hero onCTAClick={openPopup} onCasesClick={scrollToCases} />
       <TrendSection />
       <CasesSection onInView={handleCasesInView} />

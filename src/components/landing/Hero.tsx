@@ -1,11 +1,10 @@
 import { motion } from "framer-motion";
-import { CheckCircle, ArrowDown } from "lucide-react";
-import heroImage from "@/assets/hero-illustration.png";
+import { CheckCircle, ArrowDown, Sparkles } from "lucide-react";
 
 const benefits = [
-  "Помогаем выбрать профессию",
-  "Даём понятный план перехода",
-  "Сопровождаем до результата",
+  "Mesleğinizi seçmenize yardımcı oluyoruz",
+  "Net bir geçiş planı sunuyoruz",
+  "Sonuç alana kadar yanınızdayız",
 ];
 
 interface HeroProps {
@@ -15,91 +14,143 @@ interface HeroProps {
 
 const Hero = ({ onCTAClick, onCasesClick }: HeroProps) => {
   return (
-    <section className="relative overflow-hidden" style={{ background: "var(--hero-gradient)" }}>
-      <div className="container-narrow pt-6 pb-8">
-        {/* Logo */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          className="flex items-center gap-2 mb-8"
-        >
-          <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
-            <span className="text-primary-foreground font-display font-bold text-sm">S</span>
+    <section className="relative overflow-hidden pt-16" style={{ background: "var(--hero-gradient)" }}>
+      {/* Decorative elements */}
+      <div className="glow-dot w-72 h-72 bg-primary top-10 -left-20" />
+      <div className="glow-dot w-96 h-96 bg-accent -top-20 right-0 opacity-10" />
+      <div className="glow-dot w-64 h-64 bg-primary-glow bottom-0 left-1/2 opacity-10" style={{ background: "hsl(var(--primary))" }} />
+
+      <div className="container-narrow pt-12 pb-16 lg:pt-20 lg:pb-24 relative z-10">
+        <div className="lg:grid lg:grid-cols-2 lg:gap-16 lg:items-center">
+          {/* Content */}
+          <div>
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6"
+              style={{ background: "hsl(var(--primary) / 0.08)" }}
+            >
+              <Sparkles className="w-4 h-4 text-primary" />
+              <span className="text-xs font-semibold text-primary">2025'te dijital kariyere geçiş</span>
+            </motion.div>
+
+            <motion.h1
+              className="font-display text-[2rem] leading-[1.1] font-extrabold text-foreground mb-4 lg:text-5xl lg:leading-[1.1]"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 }}
+            >
+              Online meslek öğren,{" "}
+              <span className="text-gradient">dijitalde kazanmaya başla</span>
+            </motion.h1>
+
+            <motion.p
+              className="text-muted-foreground text-base leading-relaxed mb-8 lg:text-lg lg:max-w-md"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.15 }}
+            >
+              Yönünü seçmene yardımcı olacağız, adım adım plan vereceğiz ve ilk gelire kadar yanında olacağız. Ücretsiz danışmanlık — spam yok, zorunluluk yok.
+            </motion.p>
+
+            {/* Benefits */}
+            <motion.ul
+              className="space-y-3 mb-8"
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+            >
+              {benefits.map((b, i) => (
+                <li key={i} className="flex items-center gap-3">
+                  <div className="w-6 h-6 rounded-lg bg-success/10 flex items-center justify-center flex-shrink-0">
+                    <CheckCircle className="w-4 h-4 text-success" />
+                  </div>
+                  <span className="text-foreground text-[0.95rem] font-medium">{b}</span>
+                </li>
+              ))}
+            </motion.ul>
+
+            {/* CTA Buttons */}
+            <motion.div
+              className="flex flex-col sm:flex-row gap-3 mb-8"
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+            >
+              <button onClick={onCTAClick} className="cta-button w-full sm:w-auto text-base">
+                Danışmanlık Al
+              </button>
+              <button onClick={onCasesClick} className="cta-button-secondary w-full sm:w-auto text-base">
+                <ArrowDown className="w-4 h-4 mr-2" />
+                Başarı Hikayelerini Gör
+              </button>
+            </motion.div>
+
+            {/* Trust badges */}
+            <motion.div
+              className="flex flex-wrap gap-3"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.4 }}
+            >
+              <span className="trust-badge">✓ Ücretsiz</span>
+              <span className="trust-badge">✓ Spam yok</span>
+              <span className="trust-badge">✓ 15 dk içinde yanıt</span>
+            </motion.div>
           </div>
-          <span className="font-display font-bold text-lg text-foreground">Skyshift</span>
-        </motion.div>
 
-        {/* Hero Content */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.1 }}
-        >
-          <h1 className="font-display text-[2rem] leading-[1.15] font-extrabold text-foreground mb-3">
-            Освой онлайн&#8209;профессию и&nbsp;начни зарабатывать в&nbsp;digital
-          </h1>
-          <p className="text-muted-foreground text-base leading-relaxed mb-6">
-            Поможем выбрать направление, дадим пошаговый план и&nbsp;доведём до&nbsp;первого дохода. Бесплатная консультация — без&nbsp;спама и&nbsp;обязательств.
-          </p>
-        </motion.div>
-
-        {/* Benefits */}
-        <motion.ul
-          className="space-y-2.5 mb-6"
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-        >
-          {benefits.map((b, i) => (
-            <li key={i} className="flex items-center gap-2.5">
-              <CheckCircle className="w-5 h-5 text-success flex-shrink-0" />
-              <span className="text-foreground text-[0.95rem] font-medium">{b}</span>
-            </li>
-          ))}
-        </motion.ul>
-
-        {/* CTA Buttons */}
-        <motion.div
-          className="flex flex-col gap-3 mb-6"
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
-        >
-          <button onClick={onCTAClick} className="cta-button w-full text-base">
-            Получить консультацию
-          </button>
-          <button onClick={onCasesClick} className="cta-button-secondary w-full text-base">
-            <ArrowDown className="w-4 h-4 mr-1" />
-            Смотреть реальные кейсы
-          </button>
-        </motion.div>
-
-        {/* Trust badges */}
-        <motion.div
-          className="flex flex-wrap gap-4 text-xs"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.4 }}
-        >
-          <span className="trust-badge">✓ Бесплатно</span>
-          <span className="trust-badge">✓ Без спама</span>
-          <span className="trust-badge">✓ Ответ за 15 мин</span>
-        </motion.div>
-
-        {/* Hero Image */}
-        <motion.div
-          className="mt-6 flex justify-center"
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.3 }}
-        >
-          <img
-            src={heroImage}
-            alt="Переход в онлайн-профессию"
-            className="w-64 h-64 object-contain rounded-2xl"
-            loading="eager"
-          />
-        </motion.div>
+          {/* Right side — decorative graphic on desktop */}
+          <motion.div
+            className="hidden lg:flex items-center justify-center relative"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.3, duration: 0.6 }}
+          >
+            <div className="relative w-full max-w-md">
+              {/* Abstract shapes */}
+              <div className="w-80 h-80 rounded-[3rem] bg-gradient-to-br from-primary/20 to-accent/20 rotate-6 mx-auto" />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="w-64 h-64 rounded-[2.5rem] bg-gradient-to-tr from-primary/10 to-accent/10 -rotate-6 backdrop-blur-sm border border-primary/10" />
+              </div>
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="glass-card p-6 rounded-2xl max-w-[240px] shadow-xl">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center">
+                      <Sparkles className="w-5 h-5 text-primary-foreground" />
+                    </div>
+                    <div>
+                      <p className="text-sm font-bold text-foreground">+12.000</p>
+                      <p className="text-xs text-muted-foreground">Kariyer değişimi</p>
+                    </div>
+                  </div>
+                  <div className="space-y-2">
+                    <div className="h-2 rounded-full bg-primary/20 overflow-hidden">
+                      <div className="h-full w-4/5 rounded-full bg-gradient-to-r from-primary to-accent" />
+                    </div>
+                    <div className="h-2 rounded-full bg-primary/20 overflow-hidden">
+                      <div className="h-full w-3/5 rounded-full bg-gradient-to-r from-accent to-primary" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {/* Floating badges */}
+              <motion.div
+                className="absolute -top-4 right-4 glass-card px-4 py-2 rounded-xl shadow-lg"
+                animate={{ y: [0, -8, 0] }}
+                transition={{ duration: 3, repeat: Infinity }}
+              >
+                <p className="text-xs font-bold text-primary">%94 Memnuniyet</p>
+              </motion.div>
+              <motion.div
+                className="absolute -bottom-2 left-4 glass-card px-4 py-2 rounded-xl shadow-lg"
+                animate={{ y: [0, 8, 0] }}
+                transition={{ duration: 3.5, repeat: Infinity }}
+              >
+                <p className="text-xs font-bold text-accent">Ortalama 5 ay</p>
+              </motion.div>
+            </div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
