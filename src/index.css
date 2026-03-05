@@ -85,11 +85,11 @@
   }
 
   .section-padding {
-    @apply px-4 py-14 md:px-8 md:py-24 lg:px-12 lg:py-28;
+    @apply py-14 md:py-24 lg:py-28;
   }
 
   .container-narrow {
-    @apply mx-auto max-w-lg px-4 lg:max-w-6xl lg:px-8;
+    @apply mx-auto max-w-lg px-4 md:px-6 lg:max-w-6xl lg:px-8;
   }
 
   .glass-card {
