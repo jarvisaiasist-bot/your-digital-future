@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
+import { submitLead } from "@/lib/submitLead";
 
 interface PopupFormProps {
   isOpen: boolean;
@@ -26,6 +27,7 @@ const PopupForm = ({ isOpen, onClose }: PopupFormProps) => {
   const [consent, setConsent] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [sending, setSending] = useState(false);
   const phoneRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
@@ -46,10 +48,27 @@ const PopupForm = ({ isOpen, onClose }: PopupFormProps) => {
     return Object.keys(e).length === 0;
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (!validate()) return;
-    window.dispatchEvent(new CustomEvent("analytics", { detail: { event: "form_submit", source: "popup" } }));
-    setSubmitted(true);
+    if (sending) return;
+
+    setSending(true);
+    try {
+      await submitLead({
+        source: "popup",
+        name: name.trim(),
+        phone,
+        age,
+        city: city.trim(),
+        consent,
+      });
+      window.dispatchEvent(new CustomEvent("analytics", { detail: { event: "form_submit", source: "popup" } }));
+      setSubmitted(true);
+    } catch (e) {
+      setErrors((prev) => ({ ...prev, submit: "Gönderim hatası. Lütfen tekrar deneyin." }));
+    } finally {
+      setSending(false);
+    }
   };
 
   const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -114,9 +133,10 @@ const PopupForm = ({ isOpen, onClose }: PopupFormProps) => {
                   </label>
                   {errors.consent && <p className="text-destructive text-xs">{errors.consent}</p>}
 
-                  <button onClick={handleSubmit} className="cta-button w-full">
-                    Danışmanlık Al
+                  <button onClick={handleSubmit} className="cta-button w-full disabled:opacity-60" disabled={sending}>
+                    {sending ? "Gönderiliyor..." : "Danışmanlık Al"}
                   </button>
+                  {errors.submit && <p className="text-destructive text-xs">{errors.submit}</p>}
 
                   <p className="text-center text-xs text-muted-foreground">
                     🔒 Verileriniz korunmaktadır. Spam ve rahatsız edici aramalar yapılmaz.

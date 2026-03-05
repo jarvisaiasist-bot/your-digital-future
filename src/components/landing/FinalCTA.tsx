@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Mail } from "lucide-react";
+import { submitLead } from "@/lib/submitLead";
 
 const formatPhone = (value: string) => {
   const digits = value.replace(/\D/g, "").slice(0, 12);
@@ -19,6 +20,7 @@ const FinalCTA = () => {
   const [consent, setConsent] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
+  const [sending, setSending] = useState(false);
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
 
   const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -27,13 +29,27 @@ const FinalCTA = () => {
     setPhone(formatPhone(withPrefix));
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
+    if (sending) return;
     const digits = phone.replace(/\D/g, "");
     if (digits.length < 12) { setError("Geçerli bir numara girin"); return; }
     if (!consent) { setError("Onay gerekli"); return; }
     setError("");
-    window.dispatchEvent(new CustomEvent("analytics", { detail: { event: "form_submit", source: "final_cta" } }));
-    setSubmitted(true);
+
+    setSending(true);
+    try {
+      await submitLead({
+        source: "final_cta",
+        phone,
+        consent,
+      });
+      window.dispatchEvent(new CustomEvent("analytics", { detail: { event: "form_submit", source: "final_cta" } }));
+      setSubmitted(true);
+    } catch (e) {
+      setError("Gönderim hatası. Lütfen tekrar deneyin");
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -92,8 +108,8 @@ const FinalCTA = () => {
                   </span>
                 </label>
                 {error && <p className="text-xs" style={{ color: "hsl(0, 100%, 80%)" }}>{error}</p>}
-                <button onClick={handleSubmit} className="cta-button w-full" style={{ background: "hsl(var(--primary-foreground))", color: "hsl(var(--primary))" }}>
-                  Numaranızı bırakın — sizi arayacağız
+                <button onClick={handleSubmit} disabled={sending} className="cta-button w-full disabled:opacity-60" style={{ background: "hsl(var(--primary-foreground))", color: "hsl(var(--primary))" }}>
+                  {sending ? "Gönderiliyor..." : "Numaranızı bırakın — sizi arayacağız"}
                 </button>
               </motion.div>
             ) : (
