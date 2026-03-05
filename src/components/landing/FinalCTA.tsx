@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { MessageCircle, Mail, Send } from "lucide-react";
+import { Mail } from "lucide-react";
 
 const formatPhone = (value: string) => {
   const digits = value.replace(/\D/g, "").slice(0, 12);
@@ -62,12 +62,6 @@ const FinalCTA = () => {
               animate={inView ? { opacity: 1 } : {}}
               transition={{ delay: 0.3 }}
             >
-              <a href="https://t.me/skyshift" className="flex items-center gap-1.5 text-sm opacity-80 hover:opacity-100 transition-opacity" style={{ color: "hsl(var(--primary-foreground))" }}>
-                <Send className="w-4 h-4" /> Telegram
-              </a>
-              <a href="https://wa.me/905001234567" className="flex items-center gap-1.5 text-sm opacity-80 hover:opacity-100 transition-opacity" style={{ color: "hsl(var(--primary-foreground))" }}>
-                <MessageCircle className="w-4 h-4" /> WhatsApp
-              </a>
               <a href="mailto:hello@skyshift.com.tr" className="flex items-center gap-1.5 text-sm opacity-80 hover:opacity-100 transition-opacity" style={{ color: "hsl(var(--primary-foreground))" }}>
                 <Mail className="w-4 h-4" /> Email
               </a>
