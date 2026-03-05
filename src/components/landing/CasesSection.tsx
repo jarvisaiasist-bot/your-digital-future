@@ -14,7 +14,7 @@ const cases = [
   { name: "Elif", from: "Öğretmen", to: "SMM uzmanı", duration: "3 ay", avatar: "EL", color: "bg-accent" },
   { name: "Can", from: "İnşaat işçisi", to: "Frontend geliştirici", duration: "9 ay", avatar: "C", color: "bg-success" },
   { name: "Zeynep", from: "Kasiyer", to: "Hedefleme uzmanı", duration: "4 ay", avatar: "Z", color: "bg-primary" },
-  { name: "Burak", from: "Elektrikçi", to: "Data Scientist", duration: "10 ay", avatar: "B", color: "bg-accent" },
+  { name: "Burak", from: "Elektrikçi", to: "Veri bilimci", duration: "10 ay", avatar: "B", color: "bg-accent" },
 ];
 
 const CasesSection = ({ onInView }: CasesSectionProps) => {
@@ -33,7 +33,7 @@ const CasesSection = ({ onInView }: CasesSectionProps) => {
         >
           <h2 className="section-title mb-1">Gerçek <span className="text-gradient">başarı hikayeleri</span></h2>
           <p className="text-muted-foreground text-sm mb-8 lg:text-base">
-            Yardımımızla meslek değiştiren insanlar
+            Skyshift desteğiyle kariyerini dönüştüren kişiler
           </p>
         </motion.div>
 

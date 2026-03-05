@@ -37,9 +37,7 @@ const Header = ({ onCTAClick }: HeaderProps) => {
         <div className="max-w-6xl mx-auto px-4 lg:px-8 h-16 flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center gap-2.5">
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center">
-              <span className="text-primary-foreground font-display font-bold text-base">S</span>
-            </div>
+            <img src="/logo.svg" alt="Skyshift logo" className="w-9 h-9 rounded-xl" loading="eager" />
             <span className="font-display font-bold text-xl text-foreground">Skyshift</span>
           </div>
 
