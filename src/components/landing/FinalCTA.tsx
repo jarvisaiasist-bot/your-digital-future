@@ -68,7 +68,7 @@ const FinalCTA = () => {
               Ücretsiz ön görüşme ile başlayın
             </h2>
             <p className="text-base opacity-80 mb-6 lg:text-lg" style={{ color: "hsl(var(--primary-foreground))" }}>
-              Hedefinize uygun programı birlikte belirleyelim. İçerik ve süreç hakkında net bilgi verelim.
+              Hedefinize uygun programı birlikte belirleyelim. İçerik ve süreç hakkında net bilgi verelim; kariyer ve ek gelir fırsatlarını değerlendirmek için sağlam bir temel oluşturun.
             </p>
 
             {/* Contacts */}
@@ -134,7 +134,7 @@ const FinalCTA = () => {
             <a href="/refund" className="underline">İptal/İade</a>
             <a href="/contact-info" className="underline">İletişim</a>
           </p>
-          <p>Eğitim içerikleri yatırım tavsiyesi değildir; öğrenme sonuçları kişiye göre değişebilir.</p>
+          <p>Eğitim içerikleri yatırım tavsiyesi değildir; gelir ve öğrenme sonuçları kişisel çaba, deneyim ve piyasa koşullarına göre değişebilir.</p>
         </div>
       </div>
     </section>

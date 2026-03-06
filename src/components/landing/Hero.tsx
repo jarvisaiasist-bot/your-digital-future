@@ -3,7 +3,7 @@ import { CheckCircle, ArrowDown, Sparkles } from "lucide-react";
 
 const benefits = [
   "Yeni başlayanlar için anlaşılır ve yapılandırılmış eğitim",
-  "Gerçek örneklerle pratik finansal okuryazarlık",
+  "Gelir potansiyelini bilinçli değerlendirmek için pratik finansal okuryazarlık",
   "Adım adım mentor desteği ve net öğrenme planı",
 ];
 
@@ -50,7 +50,7 @@ const Hero = ({ onCTAClick, onCasesClick }: HeroProps) => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.15 }}
             >
-Finansal piyasaların çalışma mantığını, profesyonellerin kullandığı araçları ve uluslararası ödeme sistemlerinin temelini sıfırdan, uygulamalı şekilde öğrenin.
+Finansal piyasaların çalışma mantığını, profesyonellerin kullandığı araçları ve uluslararası ödeme sistemlerinin temelini sıfırdan, uygulamalı şekilde öğrenin. Yeni becerilerle kariyer ve ek gelir fırsatlarını daha bilinçli değerlendirin.
             </motion.p>
 
             {/* Benefits */}
