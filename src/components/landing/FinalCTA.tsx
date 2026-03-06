@@ -65,10 +65,10 @@ const FinalCTA = () => {
             animate={inView ? { opacity: 1, y: 0 } : {}}
           >
             <h2 className="font-display text-2xl font-bold mb-3 lg:text-4xl" style={{ color: "hsl(var(--primary-foreground))" }}>
-              Eğitime hemen başlayın
+              Ücretsiz ön görüşme ile başlayın
             </h2>
             <p className="text-base opacity-80 mb-6 lg:text-lg" style={{ color: "hsl(var(--primary-foreground))" }}>
-              İlk 3 gün ücretsiz — kart bağlama zorunluluğu olmadan programı deneyin. Sonrasında size uygun planı siz seçersiniz.
+              Hedefinize uygun programı birlikte belirleyelim. İçerik ve süreç hakkında net bilgi verelim.
             </p>
 
             {/* Contacts */}
@@ -104,12 +104,12 @@ const FinalCTA = () => {
                 <label className="flex items-start gap-2 cursor-pointer">
                   <input type="checkbox" checked={consent} onChange={(e) => setConsent(e.target.checked)} className="mt-1" />
                   <span className="text-xs opacity-80" style={{ color: "hsl(var(--primary-foreground))" }}>
-                    Kişisel verilerin işlenmesine onay veriyorum
+                    <a href="/privacy" className="underline">Gizlilik politikası</a> kapsamında kişisel verilerin işlenmesine onay veriyorum
                   </span>
                 </label>
                 {error && <p className="text-xs" style={{ color: "hsl(0, 100%, 80%)" }}>{error}</p>}
                 <button onClick={handleSubmit} disabled={sending} className="cta-button w-full disabled:opacity-60" style={{ background: "hsl(var(--primary-foreground))", color: "hsl(var(--primary))" }}>
-                  {sending ? "Gönderiliyor..." : "İlk 3 günü ücretsiz başlat"}
+                  {sending ? "Gönderiliyor..." : "Ücretsiz Ön Görüşme Talep Et"}
                 </button>
               </motion.div>
             ) : (
@@ -126,10 +126,16 @@ const FinalCTA = () => {
         </div>
 
         {/* Privacy */}
-        <p className="text-center text-xs mt-8 opacity-50" style={{ color: "hsl(var(--primary-foreground))" }}>
-          © 2025 Skyshift. Gizlilik politikası: Verilerinizi üçüncü taraflarla paylaşmıyoruz
-          ve yalnızca sizinle iletişim kurmak için kullanıyoruz.
-        </p>
+        <div className="text-center text-xs mt-8 opacity-70 space-y-2" style={{ color: "hsl(var(--primary-foreground))" }}>
+          <p>© 2026 Skyshift. Bu site eğitim programları için ön başvuru içindir.</p>
+          <p className="space-x-3">
+            <a href="/privacy" className="underline">Gizlilik</a>
+            <a href="/terms" className="underline">Kullanım Şartları</a>
+            <a href="/refund" className="underline">İptal/İade</a>
+            <a href="/contact-info" className="underline">İletişim</a>
+          </p>
+          <p>Eğitim içerikleri yatırım tavsiyesi değildir; sonuçlar kişiye göre değişebilir.</p>
+        </div>
       </div>
     </section>
   );

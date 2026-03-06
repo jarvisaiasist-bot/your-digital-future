@@ -10,11 +10,11 @@ const steps = [
 ];
 
 const trust = [
-  "İlk 3 gün ücretsiz",
-  "Programlar 100 USD’den başlar",
+  "Ücretsiz ön görüşme",
+  "Şeffaf program ve süreç bilgisi",
   "2 hafta ve üzeri eğitim seçenekleri",
-  "7/24 destek",
-  "Sahada çalışan finans uzmanlarıyla eğitim",
+  "Düzenli mentor desteği",
+  "Uygulama odaklı içerik",
 ];
 
 const ForecastSection = () => {

@@ -128,7 +128,7 @@ const PopupForm = ({ isOpen, onClose }: PopupFormProps) => {
                   <label className="flex items-start gap-2 cursor-pointer">
                     <input type="checkbox" checked={consent} onChange={(e) => setConsent(e.target.checked)} className="mt-1 accent-primary" />
                     <span className="text-xs text-muted-foreground leading-tight">
-                      <a href="#privacy" className="text-primary underline">Gizlilik politikası</a> kapsamında kişisel verilerin işlenmesine onay veriyorum
+                      <a href="/privacy" className="text-primary underline">Gizlilik politikası</a> kapsamında kişisel verilerin işlenmesine onay veriyorum
                     </span>
                   </label>
                   {errors.consent && <p className="text-destructive text-xs">{errors.consent}</p>}

@@ -4,14 +4,14 @@ import { useInView } from "react-intersection-observer";
 import { ChevronLeft, ChevronRight, Star, Quote } from "lucide-react";
 
 const reviews = [
-  { name: "Aylin K.", age: 28, text: "4 ayda UX tasarımı öğrendim. Şimdi freelance çalışıyorum ve önceki işimden daha fazla kazanıyorum.", avatar: "A", color: "bg-primary" },
-  { name: "Serkan M.", age: 35, text: "35 yaşında meslek değiştirmekten korkuyordum. Ama Skyshift ekibi tüm süreçte elimi tuttu. Şimdi frontend geliştiriciyim.", avatar: "S", color: "bg-accent" },
-  { name: "İrem V.", age: 42, text: "IT'nin gençlere özel olduğunu düşünüyordum. Yanılmışım! 5 ayda test mühendisi oldum. Destekleri için teşekkürler!", avatar: "İ", color: "bg-success" },
-  { name: "Murat D.", age: 25, text: "Danışmanlık sayesinde veri analitiğinin bana uygun olduğunu anladım. Yarım yılda büyük bir şirketten teklif aldım.", avatar: "M", color: "bg-primary" },
-  { name: "Zeynep T.", age: 31, text: "Satıcıydım, şimdi içerik yazarıyım ve 3 kat daha fazla kazanıyorum. Geçiş planı çok netti.", avatar: "Z", color: "bg-accent" },
-  { name: "Onur L.", age: 29, text: "Skyshift sadece eğitim vermiyor, gerçekten iş bulmana yardım ediyor. İlk müşterime kadar yanımdaydılar.", avatar: "O", color: "bg-success" },
-  { name: "Nazlı G.", age: 38, text: "İkinci doğum izni sırasında ofise dönmemeye karar verdim. Şimdi uzaktan proje yöneticisi olarak çalışıyorum.", avatar: "N", color: "bg-primary" },
-  { name: "Cem B.", age: 23, text: "Üniversiteden sonra iş bulamıyordum. 3 ayda junior geliştirici oldum. Hayatımın en iyi kararı!", avatar: "C", color: "bg-accent" },
+  { name: "Aylin K.", age: 28, text: "Programın adım adım yapısı sayesinde neye odaklanacağımı netleştirdim.", avatar: "A", color: "bg-primary" },
+  { name: "Serkan M.", age: 35, text: "Kariyer geçişi konusunda daha gerçekçi bir plan yapmama yardımcı oldu.", avatar: "S", color: "bg-accent" },
+  { name: "İrem V.", age: 42, text: "Temel konuların sade anlatılması öğrenme sürecimi kolaylaştırdı.", avatar: "İ", color: "bg-success" },
+  { name: "Murat D.", age: 25, text: "Danışmanlık görüşmesiyle hangi alana yönelmem gerektiğini daha net gördüm.", avatar: "M", color: "bg-primary" },
+  { name: "Zeynep T.", age: 31, text: "Eğitim planı ve mentorluk desteği düzenli ilerlememi sağladı.", avatar: "Z", color: "bg-accent" },
+  { name: "Onur L.", age: 29, text: "Süreç boyunca sorulara hızlı dönüş almam motivasyonumu artırdı.", avatar: "O", color: "bg-success" },
+  { name: "Nazlı G.", age: 38, text: "Uzaktan eğitim düzeni kurmam için pratik öneriler aldım.", avatar: "N", color: "bg-primary" },
+  { name: "Cem B.", age: 23, text: "Başlangıç seviyesinde biri olarak içerikleri anlaşılır buldum.", avatar: "C", color: "bg-accent" },
 ];
 
 const ReviewsSlider = () => {
@@ -46,7 +46,7 @@ const ReviewsSlider = () => {
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.1 }}
             >
-              Binlerce kişi hayatını değiştirdi. İşte onların hikayeleri.
+              Katılımcı geri bildirimlerinden örnek yorumlar.
             </motion.p>
           </div>
 
@@ -98,6 +98,9 @@ const ReviewsSlider = () => {
               </button>
             </div>
           </motion.div>
+          <p className="text-xs text-muted-foreground mt-3">
+            Not: Sonuçlar kişisel çaba, ayrılan zaman ve geçmiş deneyime göre değişebilir.
+          </p>
         </div>
       </div>
     </section>

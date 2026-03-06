@@ -2,9 +2,9 @@ import { motion } from "framer-motion";
 import { CheckCircle, ArrowDown, Sparkles } from "lucide-react";
 
 const benefits = [
-  "Yeni başlayanlar için eğitim",
-  "Finansal piyasalar hakkında pratik bilgi",
-  "Adım adım mentorluk ve destek",
+  "Yeni başlayanlar için yapılandırılmış eğitim",
+  "Finansal piyasalar hakkında temel ve pratik bilgi",
+  "Adım adım mentorluk ve rehberlik",
 ];
 
 interface HeroProps {
@@ -50,7 +50,7 @@ const Hero = ({ onCTAClick, onCasesClick }: HeroProps) => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.15 }}
             >
-Finansal piyasaların nasıl çalıştığını, profesyonellerin hangi araçları kullandığını ve uluslararası ödeme sistemlerinin mantığını sıfırdan, uygulamalı şekilde öğrenin.
+Finansal piyasaların çalışma mantığını, kullanılan araçları ve uluslararası ödeme sistemlerinin temelini sıfırdan, uygulamalı şekilde öğrenin.
             </motion.p>
 
             {/* Benefits */}
@@ -93,8 +93,8 @@ Finansal piyasaların nasıl çalıştığını, profesyonellerin hangi araçlar
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4 }}
             >
-              <span className="trust-badge">✓ İlk 3 gün ücretsiz</span>
-              <span className="trust-badge">✓ Programlar 100 USD’den başlar</span>
+              <span className="trust-badge">✓ Ücretsiz ön görüşme</span>
+              <span className="trust-badge">✓ Şeffaf program planı</span>
               <span className="trust-badge">✓ Adım adım destek</span>
             </motion.div>
           </div>
