@@ -82,9 +82,14 @@ Finansal piyasaların çalışma mantığını, profesyonellerin kullandığı a
                   <Gift className="w-4 h-4" />
                   Ücretsiz Ön Görüşme Al
                 </button>
-                <span className="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-yellow-400 text-yellow-950 text-[10px] font-extrabold px-3 py-1 rounded-full shadow-md border border-yellow-300 whitespace-nowrap">
-                  BONUS FIRSATI
-                </span>
+                <button
+                  type="button"
+                  onClick={onCTAClick}
+                  className="absolute -right-6 -bottom-5 rotate-45 inline-flex items-center gap-1 bg-yellow-400 text-yellow-950 text-[10px] font-extrabold px-2.5 py-1.5 rounded-full shadow-md border border-yellow-300 whitespace-nowrap"
+                >
+                  <Gift className="w-3 h-3" />
+                  BONUS AL
+                </button>
               </div>
               <button onClick={onCasesClick} className="cta-button-secondary w-full sm:w-auto text-base">
                 <ArrowDown className="w-4 h-4 mr-2" />
