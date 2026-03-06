@@ -13,9 +13,9 @@ const data = [
 ];
 
 const insights = [
-  { icon: TrendingUp, text: "Türkiye'de dijital çalışan sayısı 5 yılda 7 kat arttı" },
-  { icon: Users, text: "Şirketlerin %72'si uzaktan çalışan istihdam ediyor" },
-  { icon: Globe, text: "Dijitalde ortalama gelir geleneksel mesleklerden %45 daha yüksek" },
+  { icon: TrendingUp, text: "Dijital varlık piyasasının yapısı ve temel/ileri seviye piyasa analizi" },
+  { icon: Users, text: "AI ile finansal analiz ve rutin görevlerin otomasyonu" },
+  { icon: Globe, text: "Uluslararası bankacılık yapısı ve küresel ödeme altyapıları" },
 ];
 
 const TrendSection = () => {
@@ -31,9 +31,9 @@ const TrendSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
             >
-              <h2 className="section-title mb-2">Online çalışma bir <span className="text-gradient">trend</span></h2>
+              <h2 className="section-title mb-2">Programda <span className="text-gradient">neler öğreneceksiniz?</span></h2>
               <p className="text-muted-foreground text-sm mb-6 lg:text-base">
-                Milyonlarca insan dijitale geçti. Ve bu sayı her yıl artıyor.
+                Modern finansın temelini, dijital araçları ve uluslararası ödeme sistemlerini uygulamalı şekilde öğreneceksiniz.
               </p>
             </motion.div>
 
@@ -44,7 +44,7 @@ const TrendSection = () => {
               transition={{ delay: 0.2 }}
             >
               <p className="text-xs text-muted-foreground mb-3 font-medium">
-                Türkiye'de online uzmanlar (milyon kişi)
+                Finansal piyasalar, analiz yöntemleri ve risk yönetimi modülü
               </p>
               <ResponsiveContainer width="100%" height={200}>
                 <BarChart data={data} barCategoryGap="20%">

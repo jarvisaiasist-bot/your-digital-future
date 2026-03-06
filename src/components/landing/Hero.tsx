@@ -2,9 +2,9 @@ import { motion } from "framer-motion";
 import { CheckCircle, ArrowDown, Sparkles } from "lucide-react";
 
 const benefits = [
-  "Mesleğinizi seçmenize yardımcı oluyoruz",
-  "Net bir geçiş planı sunuyoruz",
-  "Sonuç alana kadar yanınızdayız",
+  "Yeni başlayanlar için eğitim",
+  "Finansal piyasalar hakkında pratik bilgi",
+  "Adım adım mentorluk ve destek",
 ];
 
 interface HeroProps {
@@ -31,7 +31,7 @@ const Hero = ({ onCTAClick, onCasesClick }: HeroProps) => {
               style={{ background: "hsl(var(--primary) / 0.08)" }}
             >
               <Sparkles className="w-4 h-4 text-primary" />
-              <span className="text-xs font-semibold text-primary">2025'te dijital kariyere geçiş</span>
+              <span className="text-xs font-semibold text-primary">Yeni nesil finansal okuryazarlık</span>
             </motion.div>
 
             <motion.h1
@@ -40,8 +40,8 @@ const Hero = ({ onCTAClick, onCasesClick }: HeroProps) => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
             >
-              Online meslek öğren,{" "}
-              <span className="text-gradient">dijitalde kazanmaya başla</span>
+              Finansal okuryazarlıkta
+              <span className="text-gradient"> yeni nesil yaklaşım</span>
             </motion.h1>
 
             <motion.p
@@ -50,7 +50,7 @@ const Hero = ({ onCTAClick, onCasesClick }: HeroProps) => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.15 }}
             >
-              Yönünü seçmene yardımcı olacağız, adım adım plan vereceğiz ve ilk gelire kadar yanında olacağız. Ücretsiz danışmanlık — spam yok, zorunluluk yok.
+Finansal piyasaların nasıl çalıştığını, profesyonellerin hangi araçları kullandığını ve uluslararası ödeme sistemlerinin mantığını sıfırdan, uygulamalı şekilde öğrenin.
             </motion.p>
 
             {/* Benefits */}
@@ -78,11 +78,11 @@ const Hero = ({ onCTAClick, onCasesClick }: HeroProps) => {
               transition={{ delay: 0.3 }}
             >
               <button onClick={onCTAClick} className="cta-button w-full sm:w-auto text-base">
-                Danışmanlık Al
+                Eğitime Başla
               </button>
               <button onClick={onCasesClick} className="cta-button-secondary w-full sm:w-auto text-base">
                 <ArrowDown className="w-4 h-4 mr-2" />
-                Başarı Hikayelerini Gör
+                Program İçeriğini Gör
               </button>
             </motion.div>
 
@@ -93,9 +93,9 @@ const Hero = ({ onCTAClick, onCasesClick }: HeroProps) => {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4 }}
             >
-              <span className="trust-badge">✓ Ücretsiz</span>
-              <span className="trust-badge">✓ Spam yok</span>
-              <span className="trust-badge">✓ 15 dk içinde yanıt</span>
+              <span className="trust-badge">✓ İlk 3 gün ücretsiz</span>
+              <span className="trust-badge">✓ Programlar 100 USD’den başlar</span>
+              <span className="trust-badge">✓ Adım adım destek</span>
             </motion.div>
           </div>
 

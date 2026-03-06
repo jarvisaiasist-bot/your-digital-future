@@ -65,10 +65,10 @@ const FinalCTA = () => {
             animate={inView ? { opacity: 1, y: 0 } : {}}
           >
             <h2 className="font-display text-2xl font-bold mb-3 lg:text-4xl" style={{ color: "hsl(var(--primary-foreground))" }}>
-              Hayatınızı bugün değiştirmeye başlayın
+              Eğitime hemen başlayın
             </h2>
             <p className="text-base opacity-80 mb-6 lg:text-lg" style={{ color: "hsl(var(--primary-foreground))" }}>
-              Numaranızı bırakın — sizi arayalım ve ücretsiz meslek seçmenize yardımcı olalım
+              İlk 3 gün ücretsiz — kart bağlama zorunluluğu olmadan programı deneyin. Sonrasında size uygun planı siz seçersiniz.
             </p>
 
             {/* Contacts */}
@@ -109,7 +109,7 @@ const FinalCTA = () => {
                 </label>
                 {error && <p className="text-xs" style={{ color: "hsl(0, 100%, 80%)" }}>{error}</p>}
                 <button onClick={handleSubmit} disabled={sending} className="cta-button w-full disabled:opacity-60" style={{ background: "hsl(var(--primary-foreground))", color: "hsl(var(--primary))" }}>
-                  {sending ? "Gönderiliyor..." : "Numaranızı bırakın — sizi arayacağız"}
+                  {sending ? "Gönderiliyor..." : "İlk 3 günü ücretsiz başlat"}
                 </button>
               </motion.div>
             ) : (
