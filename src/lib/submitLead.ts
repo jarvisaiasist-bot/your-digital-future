@@ -8,8 +8,12 @@ type LeadPayload = {
 };
 
 const ENV_WEBHOOK_URL = import.meta.env.VITE_SHEETS_WEBHOOK_URL as string | undefined;
+const DEFAULT_SHEETS_WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbxsrZN5KbB8jZAcsYTnZwMvt--qhfhVBkB3PmxH85EZte-A4YuxLrgOOLdibjcfSkYV/exec";
 const FALLBACK_FORMSUBMIT_EMAIL = "leadturk@proton.me";
-const WEBHOOK_URL = ENV_WEBHOOK_URL?.trim() || `https://formsubmit.co/${FALLBACK_FORMSUBMIT_EMAIL}`;
+const WEBHOOK_URL =
+  ENV_WEBHOOK_URL?.trim() ||
+  DEFAULT_SHEETS_WEBHOOK_URL ||
+  `https://formsubmit.co/${FALLBACK_FORMSUBMIT_EMAIL}`;
 
 export async function submitLead(payload: LeadPayload): Promise<{ ok: boolean; skipped?: boolean }> {
   if (!WEBHOOK_URL) {
@@ -24,7 +28,7 @@ export async function submitLead(payload: LeadPayload): Promise<{ ok: boolean; s
   };
 
   if (!ENV_WEBHOOK_URL?.trim()) {
-    console.info(`Using fallback lead webhook: ${WEBHOOK_URL}`);
+    console.info(`Using default lead webhook: ${WEBHOOK_URL}`);
   }
 
   const isFormSubmit = WEBHOOK_URL.includes("formsubmit.co");
