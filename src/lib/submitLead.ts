@@ -20,8 +20,12 @@ export async function submitLead(payload: LeadPayload): Promise<{ ok: boolean; s
     throw new Error("Lead webhook URL is not configured");
   }
 
+  const normalizedPhone = payload.phone.replace(/\D/g, "");
+
   const body = {
     ...payload,
+    phone: normalizedPhone,
+    phoneRaw: payload.phone,
     timestamp: new Date().toISOString(),
     page: window.location.href,
     userAgent: navigator.userAgent,
@@ -49,6 +53,7 @@ export async function submitLead(payload: LeadPayload): Promise<{ ok: boolean; s
       source: body.source,
       name: body.name || "",
       phone: body.phone,
+      phoneRaw: body.phoneRaw,
       age: body.age || "",
       city: body.city || "",
       consent: String(body.consent),
@@ -92,6 +97,7 @@ export async function submitLead(payload: LeadPayload): Promise<{ ok: boolean; s
       source: body.source,
       name: body.name || "",
       phone: body.phone,
+      phoneRaw: body.phoneRaw,
       age: body.age || "",
       city: body.city || "",
       consent: String(body.consent),
