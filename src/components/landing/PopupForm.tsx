@@ -103,12 +103,14 @@ const PopupForm = ({ isOpen, onClose }: PopupFormProps) => {
                 <h3 className="font-display font-bold text-lg text-foreground mb-1">
                   Sizin için özel eğitim planını birlikte oluşturalım
                 </h3>
-                <p className="text-muted-foreground text-sm mb-2">
-                  Uygun adaylar için kayıt sırasında <strong>yaklaşık 10.000 TL’ye kadar eğitim bonusu</strong> uygulanabilir.
-                </p>
-                <p className="text-xs text-muted-foreground mb-5">
-                  Nakit ödeme değildir. <a href="/promo-terms" className="text-primary underline">Kampanya koşulları</a> geçerlidir.
-                </p>
+                <div className="mb-5 rounded-xl border px-3 py-2.5" style={{ background: "hsl(var(--accent) / 0.08)", borderColor: "hsl(var(--accent) / 0.35)" }}>
+                  <p className="text-sm font-semibold text-foreground">
+                    🎁 Kayıt sırasında <span className="text-accent">10.000 TL’ye kadar eğitim bonusu</span>
+                  </p>
+                  <p className="text-[11px] text-muted-foreground mt-1">
+                    Nakit ödeme değildir. <a href="/promo-terms" className="text-primary underline">Kampanya koşulları</a> geçerlidir.
+                  </p>
+                </div>
 
                 <div className="space-y-3">
                   <div>
