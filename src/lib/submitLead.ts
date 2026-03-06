@@ -76,13 +76,25 @@ export async function submitLead(payload: LeadPayload): Promise<{ ok: boolean; s
     WEBHOOK_URL.includes("script.googleusercontent.com/macros/echo");
 
   if (isGoogleScript) {
-    // Google Apps Script endpoints can break CORS or redirect POST.
-    // Use a simple no-cors text request.
-    await fetch(WEBHOOK_URL, {
-      method: "POST",
+    // Apps Script /exec may respond with 302. Browsers can turn redirected POST into GET.
+    // To avoid payload loss, send data as query params via GET beacon.
+    const u = new URL(WEBHOOK_URL);
+    const params = new URLSearchParams({
+      source: body.source,
+      name: body.name || "",
+      phone: body.phone,
+      age: body.age || "",
+      city: body.city || "",
+      consent: String(body.consent),
+      timestamp: body.timestamp,
+      page: body.page,
+      userAgent: body.userAgent,
+    });
+    u.search = params.toString();
+
+    await fetch(u.toString(), {
+      method: "GET",
       mode: "no-cors",
-      headers: { "Content-Type": "text/plain;charset=utf-8" },
-      body: JSON.stringify(body),
       keepalive: true,
       redirect: "follow",
     });
