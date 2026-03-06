@@ -24,7 +24,7 @@ const PopupForm = ({ isOpen, onClose }: PopupFormProps) => {
   const [phone, setPhone] = useState("");
   const [age, setAge] = useState("");
   const [city, setCity] = useState("");
-  const [consent, setConsent] = useState(false);
+  const [consent, setConsent] = useState(true);
   const [submitted, setSubmitted] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [sending, setSending] = useState(false);

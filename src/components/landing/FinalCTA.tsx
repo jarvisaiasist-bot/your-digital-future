@@ -17,7 +17,7 @@ const formatPhone = (value: string) => {
 
 const FinalCTA = () => {
   const [phone, setPhone] = useState("");
-  const [consent, setConsent] = useState(false);
+  const [consent, setConsent] = useState(true);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
   const [sending, setSending] = useState(false);
