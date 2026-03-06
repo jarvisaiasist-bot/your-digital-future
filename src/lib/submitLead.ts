@@ -71,6 +71,20 @@ export async function submitLead(payload: LeadPayload): Promise<{ ok: boolean; s
     return { ok: true };
   }
 
+  const isGoogleScript = WEBHOOK_URL.includes("script.google.com/macros");
+
+  if (isGoogleScript) {
+    // Apps Script Web App often blocks CORS preflight; send as a simple no-cors request.
+    await fetch(WEBHOOK_URL, {
+      method: "POST",
+      mode: "no-cors",
+      headers: { "Content-Type": "text/plain;charset=utf-8" },
+      body: JSON.stringify(body),
+      keepalive: true,
+    });
+    return { ok: true };
+  }
+
   const res = await fetch(WEBHOOK_URL, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
