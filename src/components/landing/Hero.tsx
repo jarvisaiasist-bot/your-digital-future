@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { CheckCircle, ArrowDown, Sparkles } from "lucide-react";
+import { CheckCircle, ArrowDown, Sparkles, Gift } from "lucide-react";
 
 const benefits = [
   "Yeni başlayanlar için anlaşılır ve yapılandırılmış eğitim",
@@ -77,7 +77,8 @@ Finansal piyasaların çalışma mantığını, profesyonellerin kullandığı a
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
             >
-              <button onClick={onCTAClick} className="cta-button w-full sm:w-auto text-base">
+              <button onClick={onCTAClick} className="cta-button w-full sm:w-auto text-base gap-2">
+                <Gift className="w-4 h-4" />
                 Ücretsiz Ön Görüşme Al
               </button>
               <button onClick={onCasesClick} className="cta-button-secondary w-full sm:w-auto text-base">
