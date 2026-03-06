@@ -101,10 +101,13 @@ const PopupForm = ({ isOpen, onClose }: PopupFormProps) => {
             {!submitted ? (
               <>
                 <h3 className="font-display font-bold text-lg text-foreground mb-1">
-                  Uzmanlarımız sizinle iletişime geçecek
+                  Sizin için özel eğitim planını birlikte oluşturalım
                 </h3>
-                <p className="text-muted-foreground text-sm mb-5">
-                  ve yeni fırsatları keşfetmenize yardımcı olacak
+                <p className="text-muted-foreground text-sm mb-2">
+                  Uygun adaylar için kayıt sırasında <strong>300 USD’ye kadar (TRY karşılığı) eğitim bonusu</strong> uygulanabilir.
+                </p>
+                <p className="text-xs text-muted-foreground mb-5">
+                  Nakit ödeme değildir. <a href="/promo-terms" className="text-primary underline">Kampanya koşulları</a> geçerlidir.
                 </p>
 
                 <div className="space-y-3">
@@ -134,7 +137,7 @@ const PopupForm = ({ isOpen, onClose }: PopupFormProps) => {
                   {errors.consent && <p className="text-destructive text-xs">{errors.consent}</p>}
 
                   <button onClick={handleSubmit} className="cta-button w-full disabled:opacity-60" disabled={sending}>
-                    {sending ? "Gönderiliyor..." : "Danışmanlık Al"}
+                    {sending ? "Gönderiliyor..." : "Bonus İçin Başvur"}
                   </button>
                   {errors.submit && <p className="text-destructive text-xs">{errors.submit}</p>}
 

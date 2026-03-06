@@ -9,6 +9,7 @@ import PrivacyPage from "./pages/legal/PrivacyPage";
 import TermsPage from "./pages/legal/TermsPage";
 import RefundPage from "./pages/legal/RefundPage";
 import ContactPage from "./pages/legal/ContactPage";
+import PromoTermsPage from "./pages/legal/PromoTermsPage";
 
 const queryClient = new QueryClient();
 
@@ -24,6 +25,7 @@ const App = () => (
           <Route path="/terms" element={<TermsPage />} />
           <Route path="/refund" element={<RefundPage />} />
           <Route path="/contact-info" element={<ContactPage />} />
+          <Route path="/promo-terms" element={<PromoTermsPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
