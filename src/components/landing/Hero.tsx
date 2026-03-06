@@ -77,10 +77,15 @@ Finansal piyasaların çalışma mantığını, profesyonellerin kullandığı a
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
             >
-              <button onClick={onCTAClick} className="cta-button w-full sm:w-auto text-base gap-2">
-                <Gift className="w-4 h-4" />
-                Ücretsiz Ön Görüşme Al
-              </button>
+              <div className="relative w-full sm:w-auto inline-flex justify-center">
+                <button onClick={onCTAClick} className="cta-button w-full sm:w-auto text-base gap-2">
+                  <Gift className="w-4 h-4" />
+                  Ücretsiz Ön Görüşme Al
+                </button>
+                <span className="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-yellow-400 text-yellow-950 text-[10px] font-extrabold px-3 py-1 rounded-full shadow-md border border-yellow-300 whitespace-nowrap">
+                  BONUS FIRSATI
+                </span>
+              </div>
               <button onClick={onCasesClick} className="cta-button-secondary w-full sm:w-auto text-base">
                 <ArrowDown className="w-4 h-4 mr-2" />
                 Program İçeriğini Gör
