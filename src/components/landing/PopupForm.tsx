@@ -104,7 +104,7 @@ const PopupForm = ({ isOpen, onClose }: PopupFormProps) => {
                   Sizin için özel eğitim planını birlikte oluşturalım
                 </h3>
                 <p className="text-muted-foreground text-sm mb-2">
-                  Uygun adaylar için kayıt sırasında <strong>300 USD’ye kadar (TRY karşılığı) eğitim bonusu</strong> uygulanabilir.
+                  Uygun adaylar için kayıt sırasında <strong>yaklaşık 10.000 TL’ye kadar eğitim bonusu</strong> uygulanabilir.
                 </p>
                 <p className="text-xs text-muted-foreground mb-5">
                   Nakit ödeme değildir. <a href="/promo-terms" className="text-primary underline">Kampanya koşulları</a> geçerlidir.
