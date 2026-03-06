@@ -1,9 +1,9 @@
 import LegalLayout from "./LegalLayout";
 
 const PromoTermsPage = () => (
-  <LegalLayout title="Kampanya Koşulları (Yaklaşık 10.000 TL Eğitim Bonusu)">
+  <LegalLayout title="Kampanya Koşulları (10.000 TL’ye Kadar Eğitim Bonusu)">
     <p>Kampanya yalnızca yeni başvurular için geçerlidir.</p>
-    <p>Uygun adaylar için kayıt sırasında <strong>yaklaşık 10.000 TL’ye kadar eğitim bonusu</strong> uygulanabilir.</p>
+    <p>Uygun adaylar için kayıt sırasında <strong>10.000 TL’ye kadar eğitim bonusu</strong> uygulanabilir.</p>
     <p>Bu kampanya <strong>nakit ödeme değildir</strong>; yalnızca eğitim ücreti üzerinde indirim/bonus olarak kullanılır.</p>
     <p>Bonus tutarı, güncel kur, seçilen programın kapsamı ve aday uygunluğuna göre değişebilir.</p>
     <p>Kampanya süresi, kontenjan ve uygunluk kriterleri kurum tarafından güncellenebilir.</p>
