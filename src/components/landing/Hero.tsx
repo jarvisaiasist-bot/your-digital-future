@@ -2,9 +2,9 @@ import { motion } from "framer-motion";
 import { CheckCircle, ArrowDown, Sparkles } from "lucide-react";
 
 const benefits = [
-  "Yeni başlayanlar için yapılandırılmış eğitim",
-  "Finansal piyasalar hakkında temel ve pratik bilgi",
-  "Adım adım mentorluk ve rehberlik",
+  "Yeni başlayanlar için anlaşılır ve yapılandırılmış eğitim",
+  "Gerçek örneklerle pratik finansal okuryazarlık",
+  "Adım adım mentor desteği ve net öğrenme planı",
 ];
 
 interface HeroProps {
@@ -31,7 +31,7 @@ const Hero = ({ onCTAClick, onCasesClick }: HeroProps) => {
               style={{ background: "hsl(var(--primary) / 0.08)" }}
             >
               <Sparkles className="w-4 h-4 text-primary" />
-              <span className="text-xs font-semibold text-primary">Yeni nesil finansal okuryazarlık</span>
+              <span className="text-xs font-semibold text-primary">Dijital çağ için finansal okuryazarlık</span>
             </motion.div>
 
             <motion.h1
@@ -50,7 +50,7 @@ const Hero = ({ onCTAClick, onCasesClick }: HeroProps) => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.15 }}
             >
-Finansal piyasaların çalışma mantığını, kullanılan araçları ve uluslararası ödeme sistemlerinin temelini sıfırdan, uygulamalı şekilde öğrenin.
+Finansal piyasaların çalışma mantığını, profesyonellerin kullandığı araçları ve uluslararası ödeme sistemlerinin temelini sıfırdan, uygulamalı şekilde öğrenin.
             </motion.p>
 
             {/* Benefits */}
@@ -78,7 +78,7 @@ Finansal piyasaların çalışma mantığını, kullanılan araçları ve ulusla
               transition={{ delay: 0.3 }}
             >
               <button onClick={onCTAClick} className="cta-button w-full sm:w-auto text-base">
-                Eğitime Başla
+                Ücretsiz Ön Görüşme Al
               </button>
               <button onClick={onCasesClick} className="cta-button-secondary w-full sm:w-auto text-base">
                 <ArrowDown className="w-4 h-4 mr-2" />
@@ -119,8 +119,8 @@ Finansal piyasaların çalışma mantığını, kullanılan araçları ve ulusla
                       <Sparkles className="w-5 h-5 text-primary-foreground" />
                     </div>
                     <div>
-                      <p className="text-sm font-bold text-foreground">+12.000</p>
-                      <p className="text-xs text-muted-foreground">Kariyer değişimi</p>
+                      <p className="text-sm font-bold text-foreground">4 Modül</p>
+                      <p className="text-xs text-muted-foreground">Uygulamalı içerik</p>
                     </div>
                   </div>
                   <div className="space-y-2">
@@ -139,14 +139,14 @@ Finansal piyasaların çalışma mantığını, kullanılan araçları ve ulusla
                 animate={{ y: [0, -8, 0] }}
                 transition={{ duration: 3, repeat: Infinity }}
               >
-                <p className="text-xs font-bold text-primary">%94 Memnuniyet</p>
+                <p className="text-xs font-bold text-primary">Şeffaf öğrenme planı</p>
               </motion.div>
               <motion.div
                 className="absolute -bottom-2 left-4 glass-card px-4 py-2 rounded-xl shadow-lg"
                 animate={{ y: [0, 8, 0] }}
                 transition={{ duration: 3.5, repeat: Infinity }}
               >
-                <p className="text-xs font-bold text-accent">Ortalama 5 ay</p>
+                <p className="text-xs font-bold text-accent">Esnek eğitim süreci</p>
               </motion.div>
             </div>
           </motion.div>

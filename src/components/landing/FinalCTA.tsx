@@ -109,7 +109,7 @@ const FinalCTA = () => {
                 </label>
                 {error && <p className="text-xs" style={{ color: "hsl(0, 100%, 80%)" }}>{error}</p>}
                 <button onClick={handleSubmit} disabled={sending} className="cta-button w-full disabled:opacity-60" style={{ background: "hsl(var(--primary-foreground))", color: "hsl(var(--primary))" }}>
-                  {sending ? "Gönderiliyor..." : "Ücretsiz Ön Görüşme Talep Et"}
+                  {sending ? "Gönderiliyor..." : "Programı Görüşmek İçin Talep Bırak"}
                 </button>
               </motion.div>
             ) : (
@@ -134,7 +134,7 @@ const FinalCTA = () => {
             <a href="/refund" className="underline">İptal/İade</a>
             <a href="/contact-info" className="underline">İletişim</a>
           </p>
-          <p>Eğitim içerikleri yatırım tavsiyesi değildir; sonuçlar kişiye göre değişebilir.</p>
+          <p>Eğitim içerikleri yatırım tavsiyesi değildir; öğrenme sonuçları kişiye göre değişebilir.</p>
         </div>
       </div>
     </section>

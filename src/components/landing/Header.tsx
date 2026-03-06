@@ -59,7 +59,7 @@ const Header = ({ onCTAClick }: HeaderProps) => {
             onClick={onCTAClick}
             className="hidden lg:inline-flex cta-button !px-6 !py-2.5 !min-h-0 !text-sm !rounded-xl"
           >
-            Danışmanlık Al
+            Ücretsiz Ön Görüşme
           </button>
 
           {/* Mobile burger */}
@@ -106,7 +106,7 @@ const Header = ({ onCTAClick }: HeaderProps) => {
               </div>
               <div className="mt-3 pt-3 border-t" style={{ borderColor: "hsl(var(--border))" }}>
                 <button onClick={() => { setMenuOpen(false); onCTAClick(); }} className="cta-button w-full !text-sm">
-                  Danışmanlık Al
+                  Ücretsiz Ön Görüşme
                 </button>
               </div>
             </motion.div>
