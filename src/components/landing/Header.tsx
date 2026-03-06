@@ -7,10 +7,11 @@ interface HeaderProps {
 }
 
 const navItems = [
-  { label: "Trendler", href: "#trend" },
-  { label: "Başarı Hikayeleri", href: "#cases" },
+  { label: "Program", href: "#trend" },
+  { label: "Kimler İçin", href: "#cases" },
   { label: "Yorumlar", href: "#reviews" },
-  { label: "Gelecek", href: "#forecast" },
+  { label: "Yol Haritası", href: "#journey" },
+  { label: "SSS", href: "#faq" },
   { label: "İletişim", href: "#contact" },
 ];
 

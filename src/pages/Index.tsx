@@ -6,6 +6,8 @@ import CasesSection from "@/components/landing/CasesSection";
 import PopupForm from "@/components/landing/PopupForm";
 import ReviewsSlider from "@/components/landing/ReviewsSlider";
 import ForecastSection from "@/components/landing/ForecastSection";
+import JourneySection from "@/components/landing/JourneySection";
+import FaqSection from "@/components/landing/FaqSection";
 import FinalCTA from "@/components/landing/FinalCTA";
 import StickyCTA from "@/components/landing/StickyCTA";
 
@@ -42,6 +44,8 @@ const Index = () => {
       <CasesSection onInView={handleCasesInView} />
       <ReviewsSlider />
       <ForecastSection />
+      <JourneySection />
+      <FaqSection />
       <FinalCTA />
       <PopupForm isOpen={popupOpen} onClose={() => setPopupOpen(false)} />
       <StickyCTA visible={showSticky && !popupOpen} onClick={openPopup} />
