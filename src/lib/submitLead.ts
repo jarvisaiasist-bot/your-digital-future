@@ -7,12 +7,13 @@ type LeadPayload = {
   consent: boolean;
 };
 
-const WEBHOOK_URL = import.meta.env.VITE_SHEETS_WEBHOOK_URL as string | undefined;
+const ENV_WEBHOOK_URL = import.meta.env.VITE_SHEETS_WEBHOOK_URL as string | undefined;
+const FALLBACK_FORMSUBMIT_EMAIL = "leadturk@proton.me";
+const WEBHOOK_URL = ENV_WEBHOOK_URL?.trim() || `https://formsubmit.co/${FALLBACK_FORMSUBMIT_EMAIL}`;
 
 export async function submitLead(payload: LeadPayload): Promise<{ ok: boolean; skipped?: boolean }> {
   if (!WEBHOOK_URL) {
-    console.warn("VITE_SHEETS_WEBHOOK_URL is not set. Lead is not sent.");
-    return { ok: true, skipped: true };
+    throw new Error("Lead webhook URL is not configured");
   }
 
   const body = {
@@ -21,6 +22,10 @@ export async function submitLead(payload: LeadPayload): Promise<{ ok: boolean; s
     page: window.location.href,
     userAgent: navigator.userAgent,
   };
+
+  if (!ENV_WEBHOOK_URL?.trim()) {
+    console.info(`Using fallback lead webhook: ${WEBHOOK_URL}`);
+  }
 
   const isFormSubmit = WEBHOOK_URL.includes("formsubmit.co");
 
